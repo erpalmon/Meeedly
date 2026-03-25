@@ -1,8 +1,11 @@
+import '../../Style/Home/Home.css';
+
 function Home() {
     return (
-        <div>
-            <h1>Home Page</h1>
-            <p>This is the home page.</p>
+        <div className="home-container">
+            <div className="navbar">
+                <h2 className="logo">Foodblog</h2>
+            </div>
         </div>
     )
 }
