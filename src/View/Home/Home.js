@@ -8,6 +8,15 @@ function Home() {
                 <h2 className="nav-item">Upload</h2>
                 <h2 className="nav-item2">About Us</h2>
             </div>
+
+               <div className="home-content">
+                 <h1 className="home-title">
+                    Show your food to the <br /> world
+                </h1>
+
+               </div>
+
+
         </div>
     )
 }
