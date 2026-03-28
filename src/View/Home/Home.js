@@ -1,3 +1,4 @@
+import React, { useRef } from 'react';
 import '../../Style/Home/Home.css';
 import {
     NoplinCard,
@@ -7,13 +8,48 @@ import {
 import burger from '../../Asset/burger.jpg';
 
 function Home() {
+    const fileInputRef = useRef(null);
+
+    const handleUploadClick = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
+        }
+    };
+
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (!files || files.length === 0) {
+            return; 
+        }
+        const file = files[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) {
+            alert('Please select an image file.');
+            return;
+        }
+        console.log('Selected file:', file);
+    };
+
     return (
         <div className="home-container">
             <div className="navbar">
                 <h2 className="logo">Foodblog</h2>
-                <LightButton className="nav-item" style={{ backgroundColor: 'yellow', color: 'navy', border: '3px solid yellow', borderRadius: '10px', fontSize: '24px', fontWeight: 'bold', padding: '4px 8px' }}>
+                <LightButton
+                    className="nav-item"
+                    style={{ backgroundColor: 'yellow', color: 'navy', border: '3px solid yellow', borderRadius: '10px', fontSize: '24px', fontWeight: 'bold', padding: '4px 8px' }}
+                    onClick={handleUploadClick}
+                >
                     Upload
                 </LightButton>
+
+                <input
+                    type="file"
+                    ref={fileInputRef}
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                    onChange={handleFileChange}
+                />
+
                 <h2 className="nav-item2">About Us</h2>
             </div>
 
