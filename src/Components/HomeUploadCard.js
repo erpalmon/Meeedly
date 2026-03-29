@@ -48,3 +48,52 @@ function CircularUploadProgress({ progress }) {
     );
 }
 
+export default function HomeUploadCard({ inputId, slot, onFileChange }) {
+    return (
+        <>
+            <input
+                id={inputId}
+                type="file"
+                accept="image/*"
+                className="huc-file-input"
+                tabIndex={-1}
+                onChange={onFileChange}
+            />
+            <NoplinCard
+                className={`upload-card ${
+                    slot.status === 'idle' ? 'empty' : 'image-card'
+                } ${slot.status === 'uploading' ? 'uploading' : ''}`}
+            >
+                <NoplinCardBodyArea>
+                    {slot.status === 'idle' && (
+                        <label htmlFor={inputId} className="huc-trigger">
+                            <span className="huc-plus">+</span>
+                        </label>
+                    )}
+                    {slot.status === 'uploading' && slot.previewUrl && (
+                        <div className="card-content huc-progress-stack">
+                            <img
+                                src={slot.previewUrl}
+                                alt=""
+                                className="card-image huc-preview-image"
+                            />
+                            <div className="huc-scrim" aria-hidden="true" />
+                            <div className="huc-loader-wrap">
+                                <CircularUploadProgress progress={slot.progress} />
+                            </div>
+                        </div>
+                    )}
+                    {slot.status === 'done' && slot.previewUrl && (
+                        <div className="card-content">
+                            <img
+                                src={slot.previewUrl}
+                                alt="Uploaded food"
+                                className="card-image"
+                            />
+                        </div>
+                    )}
+                </NoplinCardBodyArea>
+            </NoplinCard>
+        </>
+    );
+}
