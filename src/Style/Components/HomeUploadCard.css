@@ -1,0 +1,110 @@
+/* Home upload slot: body fills card for label tap target */
+.upload-card.empty ._npl-card-body,
+.upload-card.uploading ._npl-card-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    height: 100%;
+    position: relative;
+}
+
+.upload-card.empty {
+    background-color: #a8a0d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.huc-plus {
+    font-size: 60px;
+    color: white;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.huc-file-input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.huc-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    align-self: stretch;
+    width: 100%;
+    min-height: 220px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.huc-trigger:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.huc-progress-stack {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.huc-preview-image {
+    opacity: 1;
+}
+
+.huc-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+}
+
+.huc-loader-wrap {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.huc-loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+}
+
+.huc-progress-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    pointer-events: none;
+    letter-spacing: 0.02em;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.upload-card.uploading {
+    cursor: default;
+}
