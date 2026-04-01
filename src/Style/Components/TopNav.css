@@ -1,0 +1,40 @@
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 70px;
+    min-height: 56px;
+}
+
+.topnav__logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+}
+
+.topnav__links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topnav__link {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.topnav__link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.topnav__link--active {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}

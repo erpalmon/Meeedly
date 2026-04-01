@@ -1,6 +1,6 @@
 import TopNav from '../../Components/TopNav';
 
-export default function About() {
+export default function Noplin() {
     return (
         <div className="home-container">
             <div className="navbar">
@@ -8,7 +8,7 @@ export default function About() {
             </div>
 
             <div className="home-content">
-                <h1 className="home-title">About Page</h1>
+                <h1 className="home-title">Noplin Page</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                     Curabitur id interdum risus. Pellentesque habitant morbi tristique senectus

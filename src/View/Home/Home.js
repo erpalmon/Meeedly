@@ -7,6 +7,7 @@ import {
 } from "noplin-uis";
 import burger from '../../Asset/burger.jpg';
 import HomeUploadCard, { createEmptyUploadSlot } from '../../Components/HomeUploadCard';
+import TopNav from '../../Components/TopNav';
 
 function Home() {
     const fileInputRef = useRef(null);
@@ -127,7 +128,7 @@ function Home() {
     return (
         <div className="home-container">
             <div className="navbar">
-                <h2 className="logo">Foodblog</h2>
+                <TopNav />
                 <LightButton
                     className="nav-item"
                     style={{ backgroundColor: 'yellow', color: 'navy', border: '3px solid yellow', borderRadius: '10px', fontSize: '24px', fontWeight: 'bold', padding: '4px 8px' }}
@@ -144,7 +145,6 @@ function Home() {
                     onChange={handleFileChange}
                 />
 
-                <h2 className="nav-item2">About Us</h2>
             </div>
 
             <div className="home-content">
